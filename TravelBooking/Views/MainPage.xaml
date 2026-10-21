@@ -29,51 +29,64 @@
                 Style="{StaticResource SubHeadline}"
                 Text="Welcome to &#10;.NET Multi-platform App UI" />
 
-            <Button
-                x:Name="btncancel"
-                Text="Cancel"
-                HorizontalOptions="Fill"
-                Clicked="btncancel_Clicked"
-                />
+            <HorizontalStackLayout>
+                <Button
+                    x:Name="btncancel"
+                    Clicked="btncancel_Clicked"
+                    HorizontalOptions="Fill"
+                    Text="Cancel" />
+
+                <Button
+                    x:Name="btnAction"
+                    Clicked="btnAction_Clicked"
+                    HorizontalOptions="Fill"
+                    Text="Action Sheet" />
+
+                <Button
+                    x:Name="btnpassenger"
+                    Clicked="btnpassenger_Clicked"
+                    HorizontalOptions="Fill"
+                    Text="Click me" />
+
+                <Button
+                    x:Name="btnDestination"
+                    Clicked="btnDestination_Clicked"
+                    HorizontalOptions="Fill"
+                    Text="Click me" />
+
+                <Button
+                    x:Name="btnbookflight"
+                    BackgroundColor="{StaticResource TravelGold}"
+                    Clicked="btnflight_Clicked"
+                    HorizontalOptions="Fill"
+                    Text="{x:Static res:AppResources.Book_Flight}"
+                    TextColor="Black" />
+
+                <Button
+                    x:Name="btnGoBook"
+                    BackgroundColor="{StaticResource TravelGold}"
+                    Clicked="btnGoBook_Clicked"
+                    HorizontalOptions="Fill"
+                    Text="Go to Booking"
+                    TextColor="Black" />
+
+            </HorizontalStackLayout>
 
             <Button
-                x:Name="btnAction"
-                Text="Action Sheet"
+                x:Name="btnBookValue"
+                BackgroundColor="Green"
+                Clicked="btnBookValue_Clicked"
                 HorizontalOptions="Fill"
-                Clicked="btnAction_Clicked"
-                />
-
-            <Button
-                x:Name="btnpassenger"
-                Text="Click me"
-                HorizontalOptions="Fill"
-                Clicked="btnpassenger_Clicked"
-                />
-
-            <Button
-                x:Name="btnDestination"
-                Text="Click me"
-                HorizontalOptions="Fill"
-                Clicked="btnDestination_Clicked"
-                />
-
-
-            <Button
-                x:Name="btnbookflight"
-                BackgroundColor="{StaticResource TravelGold}"
-                Clicked="btnflight_Clicked"
-                HorizontalOptions="Fill"
-                Text="{x:Static res:AppResources.Book_Flight}"
+                Text="Booking Page"
                 TextColor="Black" />
 
             <Button
-                x:Name="btnGoBook"
-                BackgroundColor="{StaticResource TravelGold}"
-                Clicked="btnGoBook_Clicked"
+                x:Name="btnOpenModal"
+                BackgroundColor="PaleGreen"
+                Clicked="btnOpenModal_Clicked"
                 HorizontalOptions="Fill"
-                Text="Go to Booking"
+                Text="Open Modal"
                 TextColor="Black" />
-
 
         </VerticalStackLayout>
     </ScrollView>

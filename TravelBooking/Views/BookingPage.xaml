@@ -1,12 +1,45 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TravelBooking.Views.BookingPage"
-             Title="BookingPage">
+<ContentPage
+    x:Class="TravelBooking.Views.BookingPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Title="BookingPage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <toolkit:MediaElement
+            x:Name="mediaSound"
+            HeightRequest="1"
+            ShouldAutoPlay="False"
+            ShouldShowPlaybackControls="False"
+            Source="tap.mp3" />
+
+        <Label
+            x:Name="lblDestination"
+            HorizontalOptions="Center"
+            Text="{Binding Destination}"
+            VerticalOptions="Center" />
+
+        <Image
+            x:Name="imgPastry"
+            HeightRequest="350"
+            Source="pastries.jpg"
+            WidthRequest="150">
+
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Pastry_Tapped" />
+                <SwipeGestureRecognizer Direction="Left,Right" Swiped="Pastry_SwipedLeft" />
+                <SwipeGestureRecognizer Direction="Up,Down" Swiped="Pastry_SwipedLeft" />
+            </Image.GestureRecognizers>
+
+
+        </Image>
+
+        <Button
+            x:Name="btnReturnMain"
+            Clicked="btnReturnMain_Clicked"
+            HorizontalOptions="Center"
+            Text="Return to Main"
+            VerticalOptions="Center" />
+
     </VerticalStackLayout>
 </ContentPage>

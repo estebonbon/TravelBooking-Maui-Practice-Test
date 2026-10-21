@@ -6,6 +6,10 @@
         public MainPage()
         {
             InitializeComponent();
+
+            //Immediate opem
+
+            NavigatedTo += MainPage_NavigatedTo;
         }
 
         private async void btnflight_Clicked(object sender, EventArgs e) //Make it Async
@@ -86,6 +90,27 @@
         private async void btnGoBook_Clicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync("BookingPage");
+        }
+
+        private async void btnBookValue_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("BookingPage?destination=Athens");
+        }
+
+        private async void btnOpenModal_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new ModalPage());
+        }
+
+        private bool modalShown = false;
+
+        private async void MainPage_NavigatedTo(object sender, NavigatedToEventArgs e)
+        {
+            if(!modalShown)
+            {
+                modalShown = true;
+                await Navigation.PushModalAsync(new ModalPage());
+            }
         }
     }
 }

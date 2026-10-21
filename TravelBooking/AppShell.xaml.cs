@@ -10,5 +10,10 @@ namespace TravelBooking
 
             Routing.RegisterRoute("BookingPage", typeof(BookingPage));
         }
+
+        private async void OnAboutClicked(object sender, EventArgs e)
+        {
+            await DisplayAlert("About", "Welcome to TravelBooking!", "OK");
+        }
     }
 }

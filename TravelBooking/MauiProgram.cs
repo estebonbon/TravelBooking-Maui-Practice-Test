@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CommunityToolkit.Maui;
+
+
+using Microsoft.Extensions.Logging;
 
 namespace TravelBooking
 {
@@ -9,6 +12,8 @@ namespace TravelBooking
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
+                .UseMauiCommunityToolkitMediaElement(isAndroidForegroundServiceEnabled: false) //IDK why i had to write this, but micrsoft is being stupid.UseMauiCommunityToolkitMediaElement()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
